@@ -12,13 +12,14 @@ classdef PlatformController < handle
             %Find Zaber objects and allocate their handles to the
             %controller instance
             int = self.FindZaberObject();
+            disp(int);
         end
         
     end
     methods(Access = private)
         function int = FindZaberObject(self)
             try
-                PortHandle = ZaberPort(obj.N_COM);
+                PortHandle = ZaberPort(4);
                 self.PortHandle = PortHandle;
                 self.Devices = self.PortHandle.Devices;
                 int = 1;
