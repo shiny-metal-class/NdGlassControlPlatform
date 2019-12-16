@@ -4,13 +4,14 @@ classdef PlatformController < handle
     properties(Access = private)
         PortHandle; %Handle for COM link between API and Zaber usb devices
         Devices;
-        h; %handle to the MainWindow GUI
+        app; %handle to the MainWindow GUI
     end
     methods
-        function self = PlatformController(FigHandle)
-            self.h = FigHandle; %GUI Window handle for controller to use
+        function self = PlatformController(app)
+            self.app = ControlUI; %App instance
             %Find Zaber objects and allocate their handles to the
             %controller instance
+            self.app.StatusEditField.Value = 'Good';
             int = self.FindZaberObject();
         end
         
@@ -26,6 +27,7 @@ classdef PlatformController < handle
                 int = 0;
             end
         end
+        
     end
     
 end
