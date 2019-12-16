@@ -11,8 +11,6 @@ classdef ZaberPort
             portlist = obj.scanports(5);
             COM = 'COM4';
             disp(portlist);
-            [obj.Devices, obj.SerialPort] = obj.PortConnection(COM);
-            obj.COM = COM;
         end
         function ClosePort(obj,varargin)
             fclose(obj.SerialPort);

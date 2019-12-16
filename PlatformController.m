@@ -11,10 +11,7 @@ classdef PlatformController < handle
         function self = PlatformController(FigHandle)
             self.h = FigHandle; %GUI Window handle for controller to use
             self.h = guidata(FigHandle);
-            %Find Zaber objects and allocate their handles to the
-            %controller instance
-            int = self.FindZaberObject();
-            disp(int);
+
         end
         
     end
@@ -26,6 +23,7 @@ classdef PlatformController < handle
                 self.Devices = self.PortHandle.Devices;
                 int = 1;
         end
+        
     end
     
 end
