@@ -7,10 +7,10 @@ classdef ZaberPort
         SerialPort %ID of serial port used for comms
     end
     methods
-        function obj = ZaberPort()
-            portlist = obj.scanports(5);
-            COM = 'COM4';
-            disp(portlist);
+        function obj = ZaberPort(COM)
+            obj.COM = COM;
+            [obj.Devices,obj.SerialPort] = obj.PortConnection(COM);
+            
         end
         function ClosePort(obj,varargin)
             fclose(obj.SerialPort);
