@@ -22,7 +22,7 @@ function varargout = PlatformControl_GUI(varargin)
 
 % Edit the above text to modify the response to help PlatformControl_GUI
 
-% Last Modified by GUIDE v2.5 13-Dec-2019 17:41:59
+% Last Modified by GUIDE v2.5 13-Dec-2019 18:32:54
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -246,3 +246,11 @@ function COMPort_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
+
+
+% --- If Enable == 'on', executes on mouse press in 5 pixel border.
+% --- Otherwise, executes on mouse press in 5 pixel border or over LStep.
+function LStep_ButtonDownFcn(hObject, eventdata, handles)
+% hObject    handle to LStep (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
