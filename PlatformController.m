@@ -13,13 +13,14 @@ classdef PlatformController < handle
             %controller instance
             self.app.StatusEditField.Value = 'Good';
             int = self.FindZaberObject();
+            disp(int);
         end
         
     end
     methods(Access = private)
         function int = FindZaberObject(self)
             try
-                PortHandle = ZaberPort(obj.N_COM);
+                PortHandle = ZaberPort(4);
                 self.PortHandle = PortHandle;
                 self.Devices = self.PortHandle.Devices;
                 int = 1;
